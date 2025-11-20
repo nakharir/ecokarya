@@ -1,0 +1,568 @@
+/* Variabel Warna */
+:root {
+  --color-primary: #4caf50; /* Hijau Utama */
+  --color-secondary: #8bc34a; /* Hijau Sekunder/Terang */
+  --color-dark: #2e7d32; /* Hijau Gelap */
+  --color-text: #333;
+  --color-light: #f4f4f4;
+  --color-white: #fff;
+  --font-family: "Poppins", sans-serif;
+}
+
+/* Reset Dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-white);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Header & Navigasi */
+header {
+  background: var(--color-white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+header h1 {
+  color: var(--color-dark);
+  font-size: 1.8em;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--color-text);
+  padding: 10px 15px;
+  display: block;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: var(--color-primary);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: var(--color-dark);
+}
+
+/* Tombol CTA - Primer */
+.cta-button {
+  display: inline-block;
+  padding: 12px 25px;
+  margin: 10px 10px 10px 0;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.cta-button.primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: 2px solid var(--color-primary);
+}
+
+.cta-button.primary:hover {
+  background-color: var(--color-dark);
+  border-color: var(--color-dark);
+  transform: translateY(-2px);
+}
+
+.cta-button.secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.cta-button.secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+/* Tombol CTA - Revisi (untuk Katalog) */
+.cta-button.secondary-revised {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button.secondary-revised:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Bagian Hero (Beranda) */
+.hero {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
+    ),
+    url("https://via.placeholder.com/1600x600/E8F5E9/4CAF50?text=Background+Eco");
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 3em;
+  color: var(--color-dark);
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+/* Bagian Umum */
+section {
+  padding: 60px 0;
+}
+
+section h2,
+section h3 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--color-dark);
+}
+
+.bg-light {
+  background-color: var(--color-light);
+}
+
+.bg-green {
+  background-color: var(--color-secondary);
+  color: var(--color-dark);
+}
+
+.bg-green h2 {
+  color: var(--color-dark);
+}
+
+/* Highlight Produk */
+.highlight-products .product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  text-align: center;
+}
+
+.product-card {
+  background: var(--color-white);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card h4 {
+  margin: 15px 0 5px;
+  color: var(--color-primary);
+}
+
+.product-card p {
+  padding: 0 15px 15px;
+}
+
+/* Ulasan Pelanggan */
+.testimonials blockquote {
+  font-style: italic;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 20px;
+  font-size: 1.1em;
+  padding: 20px;
+  border-left: 5px solid var(--color-primary);
+  background-color: var(--color-white);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.testimonials footer {
+  display: block;
+  margin-top: 10px;
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+/* Katalog Produk */
+.product-category {
+  background: var(--color-white);
+  padding: 30px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-left: 5px solid var(--color-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-category div {
+  flex-grow: 1;
+  margin-right: 20px;
+  max-width: 75%;
+}
+
+.product-category h3 {
+  margin: 0;
+  text-align: left;
+}
+
+.product-category p {
+  margin: 0;
+  flex-grow: 1;
+}
+
+/* Misi Kami */
+.our-mission {
+  text-align: center;
+}
+
+.mission-statement {
+  font-size: 1.2em;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+}
+
+.stats-box {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 30px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat .number {
+  font-size: 3em;
+  font-weight: 700;
+  color: var(--color-dark);
+  display: block;
+}
+
+.stat p {
+  margin-top: 5px;
+  font-weight: 400;
+}
+
+.our-mission img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 30px;
+  border-radius: 10px;
+}
+
+/* Halaman Galeri Produk */
+.product-gallery {
+  padding-top: 60px;
+  padding-bottom: 80px;
+  text-align: center;
+}
+
+.product-gallery h2 {
+  color: var(--color-dark);
+}
+
+.product-gallery p {
+  margin-bottom: 40px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.gallery-item {
+  background: var(--color-white);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.gallery-item h4 {
+  color: var(--color-primary);
+  margin: 15px 0 5px;
+}
+
+.gallery-item p {
+  font-weight: 600;
+  color: var(--color-dark);
+  padding-bottom: 15px;
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Edukasi */
+.education .section-subtitle {
+  text-align: center;
+  margin-top: -30px;
+  margin-bottom: 40px;
+  font-size: 1.1em;
+  color: #555;
+}
+
+.education .edu-content {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.edu-card {
+  background: var(--color-white);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  flex: 1 1 45%;
+  min-width: 300px;
+}
+
+.edu-card h3 {
+  color: var(--color-primary);
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.edu-card ul {
+  list-style: disc;
+  margin: 15px 0 15px 20px;
+  padding-left: 10px;
+}
+
+.edu-card ul li {
+  margin-bottom: 5px;
+}
+
+.edu-card p {
+  margin-bottom: 15px;
+}
+
+/* Kontak Statis (Revisi) */
+.contact-info-revised {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.contact-details-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  background: var(--color-white);
+  padding: 30px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  flex: 1 1 300px;
+  min-width: 250px;
+  transition: transform 0.3s;
+}
+
+.contact-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.contact-item h3 {
+  color: var(--color-dark);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.contact-item i {
+  font-size: 2.5em;
+  color: var(--color-primary);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.contact-item a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.social-media {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+}
+
+.social-media h3 {
+  margin-bottom: 20px;
+  color: var(--color-dark);
+}
+
+.social-icon {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.social-icon:hover {
+  background-color: var(--color-dark);
+}
+
+/* Footer */
+footer {
+  background: var(--color-dark);
+  color: var(--color-white);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9em;
+}
+
+/* Responsif untuk Mobile */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: var(--color-white);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  nav.active {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  nav ul li a {
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--color-light);
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero h2 {
+    font-size: 2em;
+  }
+
+  .cta-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-button {
+    width: 80%;
+    margin: 5px 0;
+  }
+
+  .product-category {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .product-category h3 {
+    margin-bottom: 10px;
+  }
+
+  .product-category p {
+    margin: 0 0 15px 0;
+  }
+
+  .stats-box {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .edu-content {
+    flex-direction: column;
+  }
+
+  .contact-details-grid {
+    flex-direction: column;
+  }
+}
